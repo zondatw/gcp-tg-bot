@@ -9,6 +9,8 @@ verify_ssl = true
 pipenv = "*"
 flask = "*"
 requests = "*"
+python-dotenv = "*"
+google-cloud-firestore = "*"
 
 [requires]
 python_version = "3.7"

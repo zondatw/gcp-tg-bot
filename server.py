@@ -4,6 +4,7 @@ from flask import Flask, request
 from flask.views import MethodView
 
 import setting
+from models import User
 
 app = Flask(__name__)
 
@@ -16,11 +17,12 @@ class BotCommand:
 
     def start(self, dict_data):
         username = dict_data["from"]["username"]
+        first_name = dict_data["from"]["first_name"]
+        last_name = dict_data["from"]["last_name"]
         chat_id = dict_data["chat"]["id"]
-        app.logger.info(
-            f"New user join: {username}\n"
-            f"chat id: {chat_id}"
-        )
+        user = User(username, first_name, last_name, chat_id)
+        user.save()
+        app.logger.info(user.to_dict())
 
 
 class HookAPI(MethodView):
