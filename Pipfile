@@ -4,11 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pipenv = "*"
 
 [packages]
-pipenv = "*"
 flask = "*"
-requests = "*"
 python-dotenv = "*"
 google-cloud-firestore = "*"
 
