@@ -49,7 +49,7 @@ PS:
 * you will see target url when you execute `gcloud app deploy`.
 
 Check remote GAE file structure:  
-![file structure](README_picture/gae_file_structure.PNG)  
+![file structure](README_picture/gae_file_structure.png)  
 
 ## Use bot
 
