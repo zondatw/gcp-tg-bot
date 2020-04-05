@@ -2,6 +2,8 @@ from logging.config import dictConfig
 
 from dotenv import load_dotenv
 
+load_dotenv(".env")
+
 dictConfig({
     "version": 1,
     "formatters": {

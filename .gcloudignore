@@ -23,6 +23,8 @@ Pipfile*
 
 # env
 .vscode
+.env
+key.json
 
 # project
 README*

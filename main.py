@@ -14,6 +14,9 @@ class BotCommand:
         if dict_data["text"] == "/start":
             app.logger.debug(f"Get Bot command 'start' request")
             self.start(dict_data)
+        elif dict_data["text"] == "/leave":
+            app.logger.debug(f"Get Bot command 'leave' request")
+            self.leave(dict_data)
 
     def start(self, dict_data):
         username = dict_data["from"]["username"]
@@ -23,6 +26,14 @@ class BotCommand:
         user = User(username, first_name, last_name, chat_id)
         user.save()
         app.logger.info(user.to_dict())
+
+    def leave(self, dict_data):
+        username = dict_data["from"]["username"]
+        first_name = dict_data["from"]["first_name"]
+        last_name = dict_data["from"]["last_name"]
+        chat_id = dict_data["chat"]["id"]
+        user = User(username, first_name, last_name, chat_id)
+        user.delete()
 
 
 class HookAPI(MethodView):

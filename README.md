@@ -2,13 +2,13 @@
 
 ## Setup local
 
-.env
+.env  
 
 ```text
 GOOGLE_APPLICATION_CREDENTIALS={key path}
 ```
 
-init
+init  
 
 ```shell
 $ pipenv install
@@ -22,7 +22,7 @@ Create native mode firestore, gcp path: `/STORAGE/Firestore/Select native mode`
 
 ### Set up authentication
 
-Create Service account that role is owner, and create json type key about this account
+Create Service account that role is owner, and create json type key about this account  
 
 ### Deploy GAE
 
@@ -54,8 +54,13 @@ Check remote GAE file structure:
 ## Use bot
 
 When user join your bot  
-![join bot](README_picture/join_bot.PNG)
+![join bot](README_picture/join_bot.PNG)  
 
 You will see new user insert you firestore  
-![firestore join user](README_picture/firestore_join_user.PNG)
+![firestore join user](README_picture/firestore_join_user.PNG)  
 
+After user leave your bot  
+![leave bot](README_picture/leave_bot.PNG)  
+
+You will see user remove from you firestore  
+![firestore leave user](README_picture/firestore_leave_user.PNG)  

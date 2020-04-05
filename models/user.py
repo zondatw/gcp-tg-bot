@@ -6,6 +6,7 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
         self.chat_id = chat_id
+        self.db = firestore.Client()
 
     def to_dict(self):
         return {
@@ -16,10 +17,13 @@ class User:
         }
 
     def save(self):
-        db = firestore.Client()
-        doc_ref = db.collection(type(self).__name__.lower()).document(self.username)
+        doc_ref = self.db.collection(type(self).__name__.lower()).document(self.username)
         return doc_ref.set({
             "first_name": self.first_name,
             "last_name": self.last_name,
             "chat_id": self.chat_id,
         })
+
+    def delete(self):
+        doc_ref = self.db.collection(type(self).__name__.lower()).document(self.username)
+        doc_ref.delete()
