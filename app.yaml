@@ -1,1 +1,2 @@
 runtime: python37
+entrypoint: gunicorn -b :$PORT --threads=4 main:app

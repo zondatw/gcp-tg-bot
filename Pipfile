@@ -10,6 +10,7 @@ pipenv = "*"
 flask = "*"
 python-dotenv = "*"
 google-cloud-firestore = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
