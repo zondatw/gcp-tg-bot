@@ -23,7 +23,7 @@ Pipfile*
 
 # env
 .vscode
-.env
+.local.env
 key.json
 
 # project

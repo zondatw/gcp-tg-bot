@@ -1,6 +1,7 @@
 # env
 .vscode
 .env
+.local.env
 
 # PIP
 Pipfile.lock

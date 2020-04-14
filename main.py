@@ -1,10 +1,14 @@
+import os
 from pprint import pprint
 
+import requests
 from flask import Flask, request
 from flask.views import MethodView
 
-import setting
+from config import setting
 from models import User
+
+from apps import hitcon_zeroday
 
 app = Flask(__name__)
 
@@ -53,8 +57,8 @@ class HookAPI(MethodView):
             pass
         return "OK"
 
-
 app.add_url_rule("/hook", view_func=HookAPI.as_view("hook"))
+app.add_url_rule("/hitcon_zeroday_crawler", view_func=hitcon_zeroday.App.as_view("hitcon_zeroday_crawler"))
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)

@@ -5,6 +5,12 @@
 .env  
 
 ```text
+BOT_TOKEN={bot token}
+```
+
+.local.env  
+
+```text
 GOOGLE_APPLICATION_CREDENTIALS={key path}
 ```
 
@@ -64,3 +70,23 @@ After user leave your bot
 
 You will see user remove from you firestore  
 ![firestore leave user](README_picture/firestore_leave_user.PNG)  
+
+
+## Hitcon zeroday crawler notification
+
+### Start
+
+Try connect http://127.0.0.1:8080/hitcon_zeroday_crawler  
+You will see bot notify zeroday info what last update is yesterday  
+![local try hitcon zeroday](README_picture/local_try_hitcon_zeroday.PNG)  
+
+### Set cloud scheduler on GCP
+
+Open GCP web dashboard  
+/ TOOLS / Cloud Scheduler / Create Job  
+
+In this example, I set every 2:06 am, it will connect /hitcon_zeroday_crawler of app engine, when connect this, it will trigger crawler and notify zeroday info to all user who join this bot.  
+![create cloud scheduler](README_picture/create_cloud_scheduler.png)  
+![trigger success](README_picture/trigger_success.png)  
+![gcp nitcon zeroday notify](README_picture/gcp_hitcon_zeroday_notify.PNG)  
+

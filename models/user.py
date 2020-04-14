@@ -16,6 +16,13 @@ class User:
             "chat_id": self.chat_id,
         }
 
+    @classmethod
+    def get_all(cls):
+        db = firestore.Client()
+        doc_ref = db.collection(cls.__name__.lower())
+        docs = doc_ref.stream()
+        return [doc.to_dict() for doc in docs]
+
     def save(self):
         doc_ref = self.db.collection(type(self).__name__.lower()).document(self.username)
         return doc_ref.set({

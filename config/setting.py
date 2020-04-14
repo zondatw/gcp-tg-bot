@@ -1,8 +1,13 @@
+import os
+
 from logging.config import dictConfig
 
 from dotenv import load_dotenv
 
 load_dotenv(".env")
+load_dotenv(".local.env")
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 dictConfig({
     "version": 1,
