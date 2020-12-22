@@ -20,11 +20,15 @@ init
 $ pipenv install
 ```
 
-## Set up GCP
+## Set up GCP using Terraform
+
+[Terraform README.md](./terraform/README.md)  
+
+## Manual set up GCP
 
 ### Create firestore
 
-Create native mode firestore, gcp path: `/STORAGE/Firestore/Select native mode`  
+Create native mode firestore, gcp path: `/Databases/Firestore/Select native mode`  
 
 ### Set up authentication
 

@@ -8,3 +8,11 @@ Pipfile.lock
 
 # key
 *key*
+
+# Deploy
+artifact.zip
+
+# Terraform
+.Terraform
+*tfstate*
+*tfvars*
